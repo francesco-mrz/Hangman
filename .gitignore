@@ -17,3 +17,5 @@ hs_err_pid*
 # IntellliJ files
 .idea
 *.iml
+/.classpath
+/.project
