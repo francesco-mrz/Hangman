@@ -15,8 +15,6 @@ import java.net.Socket;
 
 import hangman.Game;
 import hangman.GameResult;
-import hangman.Hangman;
-import hangman.Player;
 
 /**
  *
@@ -52,10 +50,19 @@ public class HangmanServer {
 			out.println(game.getSecretWord());
 			
 
-			while (game.getResult() == GameResult.OPEN) {
+			while (true) {
+
 				out.println(game.getKnownLetters());
 				out.println(game.countMissingLetters());
 				out.println(game.countFailedAttempts());
+
+				if (game.getResult() != GameResult.OPEN) {
+					out.println(0);
+					break;
+				}
+				else {
+					out.println(1);
+				}
 
 				String line = in.readLine();
 				char c = line.charAt(0);
@@ -66,6 +73,10 @@ public class HangmanServer {
 //				out.write(game.countFailedAttempts());
 //				out.write(game.countMissingLetters());
 			}
+
+			System.out.println("end");
+			break;
 		}
+
 	}
 }
