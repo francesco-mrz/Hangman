@@ -48,7 +48,6 @@ public class HangmanServer {
 //			out.write(game.countFailedAttempts());
 
 			out.println(game.getSecretWord());
-			
 
 			while (true) {
 
@@ -59,8 +58,7 @@ public class HangmanServer {
 				if (game.getResult() != GameResult.OPEN) {
 					out.println(0);
 					break;
-				}
-				else {
+				} else {
 					out.println(1);
 				}
 
@@ -70,8 +68,6 @@ public class HangmanServer {
 
 				System.out.println(game.countMissingLetters());
 				System.out.println(game.countFailedAttempts());
-//				out.write(game.countFailedAttempts());
-//				out.write(game.countMissingLetters());
 			}
 
 			System.out.println("end");
